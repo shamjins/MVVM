@@ -1,6 +1,5 @@
 package com.logicipher.mvvm.di.builder
 
-import com.logicipher.mvvm.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
