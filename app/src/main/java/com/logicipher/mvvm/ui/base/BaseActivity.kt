@@ -19,7 +19,7 @@ import dagger.android.AndroidInjection
  * Created by Shamji N S on 20-08-2020.
  */
 
-abstract class BaseActivity<T : ViewDataBinding?, V : BaseViewModel<V>?> :
+abstract class BaseActivity<T : ViewDataBinding?, V : BaseViewModel<*>?> :
     AppCompatActivity(), BaseFragment.Callback {
     // TODO
     // this can probably depend on isLoading variable of BaseViewModel,

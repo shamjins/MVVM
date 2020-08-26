@@ -1,5 +1,6 @@
 package com.logicipher.mvvm.di.builder
 
+import com.logicipher.mvvm.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -8,8 +9,9 @@ import dagger.android.ContributesAndroidInjector
  */
 @Module
 public abstract class ActivityBuilder {
+
     @ContributesAndroidInjector
-    abstract fun bindMainActivity(): MainActivity?
+    internal abstract fun bindMainActivity(): MainActivity
 
 
 }

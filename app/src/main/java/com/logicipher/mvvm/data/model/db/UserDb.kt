@@ -2,6 +2,7 @@ package com.logicipher.mvvm.data.model.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 /**
  * Created by Shamji N S on 20-08-2020.
@@ -9,7 +10,8 @@ import androidx.room.Entity
 @Entity(tableName = "user")
 public class UserDb {
 
+    @PrimaryKey
     @ColumnInfo(name = "id")
-    val id : Long = 0
+    var id : Long = 0
 
 }

@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.room.Room
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.logicipher.mvvm.BuildConfig
 import com.logicipher.mvvm.data.AppDataManager
 import com.logicipher.mvvm.data.DataManager
 import com.logicipher.mvvm.data.local.database.AppDatabase
@@ -30,7 +31,7 @@ import javax.inject.Singleton
  */
 
 @Module
-public class AppModule {
+class AppModule {
     @Provides
     @Singleton
     fun provideApiHelper(appApiHelper: AppApiHelper): ApiHelper {
@@ -40,7 +41,7 @@ public class AppModule {
     @Provides
     @ApiInfo
     fun provideApiKey(): String {
-        return "BuildConfig.API_KEY"
+        return "http://www.mocky.io/v2"
     }
 
     @Provides
@@ -49,11 +50,20 @@ public class AppModule {
         @DatabaseInfo dbName: String?,
         context: Context?
     ): AppDatabase {
-        return Room.databaseBuilder<AppDatabase>(context!!, AppDatabase::class.java, dbName!!)
+        return Room.databaseBuilder(context!!, AppDatabase::class.java, dbName!!)
             .fallbackToDestructiveMigration()
             .build()
     }
 
+    /*
+    @Provides
+    @Singleton
+    CalligraphyConfig provideCalligraphyDefaultConfig() {
+        return new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/source-sans-pro/SourceSansPro-Regular.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build();
+    }*/
     @Provides
     @Singleton
     fun provideContext(application: Application): Context {
