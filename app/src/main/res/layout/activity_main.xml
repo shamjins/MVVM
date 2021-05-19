@@ -11,24 +11,34 @@
             type="com.logicipher.mvvm.ui.main.MainViewModel" />
     </data>
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/white">
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MVVM Sample"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:textSize="@dimen/text_size_large"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Start Activity"
-            android:id="@+id/btnStartActivity"
-            android:layout_marginTop="10dp"/>
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MVVM Sample"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textSize="@dimen/text_size_large"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Load Fragment"
+                android:id="@+id/btnLoadFragment"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+
+    </FrameLayout>
+
   </layout>

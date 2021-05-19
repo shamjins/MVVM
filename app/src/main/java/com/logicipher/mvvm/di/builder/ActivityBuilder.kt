@@ -1,7 +1,7 @@
 package com.logicipher.mvvm.di.builder
 
 import com.logicipher.mvvm.ui.main.MainActivity
-import com.logicipher.mvvm.ui.test.TestActivity
+import com.logicipher.mvvm.ui.test_frag.TestFragmentProvider
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -11,10 +11,12 @@ import dagger.android.ContributesAndroidInjector
 @Module
 public abstract class ActivityBuilder {
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(
+        modules = [
+            TestFragmentProvider::class
+        ]
+    )
     internal abstract fun bindMainActivity(): MainActivity
 
-    @ContributesAndroidInjector
-    internal abstract fun bindTestActivity() : TestActivity
 
 }

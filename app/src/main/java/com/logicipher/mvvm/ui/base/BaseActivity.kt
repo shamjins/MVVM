@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -113,6 +114,10 @@ abstract class BaseActivity<T : ViewDataBinding?, V : BaseViewModel<*>?> :
     fun showLoading() {
         hideLoading()
         mProgressDialog = CommonUtils.showLoadingDialog(this)
+    }
+
+    fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun performDataBinding() {

@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-   >
+<layout>
 
     <data>
+
         <variable
             name="viewModel"
-            type="com.logicipher.mvvm.ui.test.TestViewModel" />
+            type="com.logicipher.mvvm.ui.test_frag.TestFragmentViewModel" />
     </data>
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Test Activity"/>
+            android:text="Test Fragment"
+            android:textSize="14sp" />
 
     </LinearLayout>
 </layout>

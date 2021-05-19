@@ -1,7 +1,7 @@
 package com.logicipher.mvvm.ui.main
 
 /**
- * Created by Shamji N S on 21-08-2020.
+ * Created by Shamji N S on 5/19/2021.
  */
-public interface MainNavigator {
+interface MainNavigator {
 }

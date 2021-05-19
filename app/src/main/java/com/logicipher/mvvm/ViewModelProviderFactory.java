@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.logicipher.mvvm.data.DataManager;
 import com.logicipher.mvvm.ui.main.MainViewModel;
-import com.logicipher.mvvm.ui.test.TestViewModel;
+import com.logicipher.mvvm.ui.test_frag.TestFragmentViewModel;
 import com.logicipher.mvvm.utils.rx.SchedulerProvider;
 
 import javax.inject.Inject;
@@ -31,8 +31,8 @@ public class ViewModelProviderFactory extends ViewModelProvider.NewInstanceFacto
 
         if (modelClass.isAssignableFrom(MainViewModel.class)) {
             return (T) new MainViewModel(dataManager, schedulerProvider);
-        } else if (modelClass.isAssignableFrom(TestViewModel.class)) {
-            return (T) new TestViewModel(dataManager, schedulerProvider);
+        } else if (modelClass.isAssignableFrom(TestFragmentViewModel.class)) {
+            return (T) new TestFragmentViewModel(dataManager, schedulerProvider);
         }
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }
